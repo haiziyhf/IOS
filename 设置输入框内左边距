@@ -1,0 +1,6 @@
+//设置内左边距
+    CGRect frame = [textField frame];
+    frame.size.width = 7.0f;
+    UIView *leftView = [[UIView alloc] initWithFrame:frame];
+    textField.leftViewMode = UITextFieldViewModeAlways;
+    textField.leftView = leftView;
