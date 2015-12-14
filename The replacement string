@@ -1,0 +1,4 @@
+//替换指定位置或指定长度字符串
+NSString *mobile = @"15923220707";
+NSMutableString *strMobile = [[NSMutableString alloc] initWithString:mobile];
+[strMobile replaceCharactersInRange:NSMakeRange(3,5) withString:@"*****"];
