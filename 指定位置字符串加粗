@@ -1,0 +1,11 @@
+#import <CoreText/CoreText.h>
+	NSString *goodsNumber = [NSString stringWithFormat:@"%@",goodsInfo[@"goodsNumber"]];
+    NSString *goodsTotalStr = [NSString stringWithFormat:@"共%@件商品",goodsNumber];
+    NSMutableAttributedString *goodsTotalAttr = [[NSMutableAttributedString alloc] initWithString:goodsTotalStr];
+    [goodsTotalAttr addAttribute:(NSString *)kCTFontAttributeName
+                       value:(id)CFBridgingRelease(CTFontCreateWithName((CFStringRef)FONT_MAIN_BOLD.fontName,
+                                                      FONT_MAIN_BOLD.pointSize,
+                                                      NULL))
+                       range:NSMakeRange(1, [goodsNumber length])];
+
+    goodsTotalLabel.attributedText = goodsTotalAttr;

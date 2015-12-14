@@ -1,0 +1,7 @@
+	NSString *mobile = userEntity.mobile;
+    NSMutableString *mobileStr = [[NSMutableString alloc] initWithString:mobile];
+    [mobileStr replaceCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
+    NSString *tipStr = [NSString stringWithFormat:@"请输入手机号%@收到的短信验证码.",mobileStr];
+    NSMutableAttributedString *tipAttr = [[NSMutableAttributedString alloc] initWithString:tipStr];
+    [tipAttr addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(6, 11)];
+    tipLabel.attributedText = tipAttr;
